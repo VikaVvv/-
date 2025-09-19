@@ -10,65 +10,61 @@
           <mxGeometry x="40" y="40" width="160" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="3" value="university_id (PK)\nname\naddress\ncity\ntype\nwebsite\nphone\naccreditation_level" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="220" y="40" width="220" height="120" as="geometry"/>
+          <mxGeometry x="220" y="40" width="240" height="140" as="geometry"/>
         </mxCell>
-        <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="2" target="3">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
+        <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="2" target="3"/>
 
         <!-- FACULTY -->
         <mxCell id="5" value="FACULTY" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="200" width="160" height="60" as="geometry"/>
+          <mxGeometry x="40" y="220" width="160" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="6" value="faculty_id (PK)\nuniversity_id (FK)\nname\ndean\nphone" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="220" y="200" width="220" height="100" as="geometry"/>
+          <mxGeometry x="220" y="220" width="240" height="100" as="geometry"/>
         </mxCell>
-        <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="5" target="6">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
+        <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="5" target="6"/>
 
         <!-- HAS_FACULTIES -->
         <mxCell id="8" value="HAS_FACULTIES (1:M)" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="120" y="120" width="120" height="60" as="geometry"/>
+          <mxGeometry x="120" y="140" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="2" target="8"/>
         <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="8" target="5"/>
 
         <!-- SPECIALTY -->
         <mxCell id="11" value="SPECIALTY" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="360" width="160" height="60" as="geometry"/>
+          <mxGeometry x="40" y="400" width="160" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="12" value="specialty_id (PK)\ncode\nname\nfield\ndescription\nqualification" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="220" y="360" width="220" height="120" as="geometry"/>
+          <mxGeometry x="220" y="400" width="240" height="120" as="geometry"/>
         </mxCell>
         <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="11" target="12"/>
 
         <!-- OFFERS_SPECIALTIES -->
-        <mxCell id="14" value="OFFERS_SPECIALTIES (M:N)" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="120" y="280" width="120" height="60" as="geometry"/>
+        <mxCell id="14" value="OFFERS (M:N)" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="320" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="5" target="14"/>
         <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="14" target="11"/>
 
         <!-- ADMISSION -->
         <mxCell id="17" value="ADMISSION" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="540" width="160" height="60" as="geometry"/>
+          <mxGeometry x="40" y="580" width="160" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="18" value="admission_id (PK)\nuniversity_id (FK)\nspecialty_id (FK)\nstudy_form\nyear\nbudget_places\npassing_score\ncompetition\ntuition_fee\napplication_count" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="220" y="540" width="260" height="160" as="geometry"/>
+          <mxGeometry x="220" y="580" width="280" height="160" as="geometry"/>
         </mxCell>
         <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="17" target="18"/>
 
-        <!-- UNIVERSITY → ADMISSION -->
+        <!-- PARTICIPATES_IN -->
         <mxCell id="20" value="PARTICIPATES_IN (1:M)" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="120" y="460" width="120" height="60" as="geometry"/>
+          <mxGeometry x="120" y="500" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="2" target="20"/>
         <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="20" target="17"/>
 
-        <!-- SPECIALTY → ADMISSION -->
-        <mxCell id="23" value="SPECIALTY_ADMISSION (1:M)" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="120" y="460" width="120" height="60" as="geometry"/>
+        <!-- SPECIALTY_ADMISSION -->
+        <mxCell id="23" value="BELONGS_TO (1:M)" style="shape=rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="500" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="11" target="23"/>
         <mxCell id="25" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;" edge="1" parent="1" source="23" target="17"/>
